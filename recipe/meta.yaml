@@ -34,7 +34,13 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  summary: A fast and complete Python implementation of Markdown
+  summary: fast and complete Python implementation of Markdown
+  description: |
+    Markdown is a text-to-HTML filter; it translates an easy-to-read / easy-to-write structured
+    text format into HTML.
+  doc_url: https://pypi.python.org/pypi/markdown2
+  doc_source_url: https://github.com/trentm/python-markdown2/blob/master/README.md
+  dev_url: https://github.com/waylan/Python-Markdown
 
 extra:
   recipe-maintainers:
