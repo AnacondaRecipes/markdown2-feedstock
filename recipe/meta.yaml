@@ -1,6 +1,6 @@
 {% set name = "markdown2" %}
-{% set version = "2.3.8" %}
-{% set sha256 = "7ff88e00b396c02c8e1ecd8d176cfa418fb01fe81234dcea77803e7ce4f05dbe" %}
+{% set version = "2.3.9" %}
+{% set sha256 = "89526090907ae5ece66d783c434b35c29ee500c1986309e306ce2346273ada6a" %}
 
 package:
   name: {{ name|lower }}
