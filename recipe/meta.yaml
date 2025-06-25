@@ -1,6 +1,5 @@
 {% set name = "markdown2" %}
 {% set version = "2.5.3" %}
-{% set sha256 = "4d502953a4633408b0ab3ec503c5d6984d1b14307e32b325ec7d16ea57524895" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: 4d502953a4633408b0ab3ec503c5d6984d1b14307e32b325ec7d16ea57524895
 
 build:
   number: 0
@@ -22,6 +21,7 @@ requirements:
     - pip
     - python
     - setuptools
+    - wheel
   run:
     - python
   run_constrained:
