@@ -12,25 +12,29 @@ source:
 
 build:
   number: 0
-  noarch: python
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
   entry_points:
     - markdown2 = markdown2:main
-  skip: true  # [py<39,<40]
+  skip: true  # [py<39]
 
 requirements:
   host:
     - pip
     - python
+    - setuptools
   run:
     - python
   run_constrained:
+    # code_syntax_highlighting
     - pygments >=2.7.3
 
 test:
   imports:
     - markdown2
+  requires:
+    - pip
   commands:
+    - pip check
     - markdown2 --help
 
 about:
@@ -42,9 +46,8 @@ about:
   description: |
     Markdown is a text-to-HTML filter; it translates an easy-to-read / easy-to-write structured
     text format into HTML.
-  doc_url: https://pypi.org/pypi/markdown2
-  doc_source_url: https://github.com/trentm/python-markdown2/blob/master/README.md
-  dev_url: https://github.com/waylan/Python-Markdown
+  doc_url: https://github.com/trentm/python-markdown2/blob/master/README.md
+  dev_url: https://github.com/trentm/python-markdown2
 
 extra:
   recipe-maintainers:
