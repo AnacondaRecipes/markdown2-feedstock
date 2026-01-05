@@ -29,13 +29,20 @@ requirements:
     - pygments >=2.7.3
 
 test:
+  source_files:
+    - test
   imports:
     - markdown2
   requires:
     - pip
+    # Tests are not working with pytest 8
+    # 'yield' keyword is allowed in fixtures, but not in tests (test_cases)
+    - pytest <8
   commands:
     - pip check
     - markdown2 --help
+    - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
+    - pytest -v test
 
 about:
   home: https://github.com/trentm/python-markdown2
